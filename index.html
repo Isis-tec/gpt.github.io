@@ -32,8 +32,6 @@
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
             animation: fadeIn 1s ease-out;
         }
 
@@ -41,7 +39,7 @@
         .header {
             background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 50px 30px;
             text-align: center;
         }
 
@@ -49,35 +47,36 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
         }
 
         .logo-image {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .title-container h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .title-container p {
-            font-size: 1.3rem;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            opacity: 0.95;
             font-weight: 300;
         }
 
         /* Contenido principal */
         .main-content {
-            padding: 40px 30px;
+            padding: 50px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -85,44 +84,47 @@
         }
 
         .description {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #555;
-            margin-bottom: 30px;
-            max-width: 600px;
+            margin-bottom: 40px;
+            max-width: 700px;
             line-height: 1.8;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             width: 100%;
-            max-width: 800px;
-            margin-top: 20px;
+            max-width: 900px;
+            margin-top: 30px;
         }
 
         .feature {
             background: #f8f9fa;
-            padding: 25px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .feature h3 {
             color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .feature p {
             color: #7f8c8d;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -130,14 +132,20 @@
             background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 25px;
+            font-size: 1rem;
         }
 
         /* Animaciones */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
         }
 
         /* Media Queries para Responsive */
@@ -145,7 +153,40 @@
         /* Tablets */
         @media (max-width: 768px) {
             .title-container h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .title-container p {
+                font-size: 1.2rem;
+            }
+            
+            .logo-image {
+                width: 85px;
+                height: 85px;
+            }
+            
+            .main-content {
+                padding: 40px 25px;
+            }
+            
+            .description {
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Móviles */
+        @media (max-width: 480px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .title-container h1 {
+                font-size: 2rem;
             }
             
             .title-container p {
@@ -153,8 +194,8 @@
             }
             
             .logo-image {
-                width: 70px;
-                height: 70px;
+                width: 75px;
+                height: 75px;
             }
             
             .main-content {
@@ -163,13 +204,28 @@
             
             .description {
                 font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature {
+                padding: 25px 20px;
+            }
+            
+            body {
+                padding: 15px;
             }
         }
 
-        /* Móviles */
-        @media (max-width: 480px) {
-            .header {
-                padding: 30px 20px;
+        /* Móviles pequeños */
+        @media (max-width: 320px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 20px;
             }
             
             .title-container h1 {
@@ -181,36 +237,8 @@
             }
             
             .logo-image {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .main-content {
-                padding: 25px 15px;
-            }
-            
-            .description {
-                font-size: 1rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .feature {
-                padding: 20px 15px;
-            }
-        }
-
-        /* Móviles pequeños */
-        @media (max-width: 320px) {
-            .logo-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .title-container h1 {
-                font-size: 1.6rem;
+                width: 65px;
+                height: 65px;
             }
         }
 
@@ -259,25 +287,25 @@
         <main class="main-content">
             <p class="description">
                 Ofrecemos servicios de traducción profesional de alta calidad en múltiples idiomas, 
-                adaptándonos a las necesidades específicas de cada cliente.
+                adaptándonos a las necesidades específicas de cada cliente con los más altos estándares de calidad.
             </p>
             
             <div class="features">
                 <div class="feature">
                     <h3>Traducción Profesional</h3>
-                    <p>Textos técnicos, legales, médicos y literarios con máxima precisión.</p>
+                    <p>Textos técnicos, legales, médicos y literarios con máxima precisión y atención al detalle.</p>
                 </div>
                 <div class="feature">
                     <h3>Localización Cultural</h3>
-                    <p>Adaptamos contenido considerando diferencias culturales y regionales.</p>
+                    <p>Adaptamos contenido considerando diferencias culturales, regionales y contextuales específicas.</p>
                 </div>
                 <div class="feature">
                     <h3>Múltiples Idiomas</h3>
-                    <p>Amplia gama de combinaciones lingüísticas para todos tus proyectos.</p>
+                    <p>Amplia gama de combinaciones lingüísticas para todos tus proyectos y necesidades.</p>
                 </div>
                 <div class="feature">
                     <h3>Entrega Rápida</h3>
-                    <p>Cumplimos con los plazos más exigentes sin comprometer la calidad.</p>
+                    <p>Cumplimos con los plazos más exigentes sin comprometer la calidad del trabajo final.</p>
                 </div>
             </div>
         </main>
