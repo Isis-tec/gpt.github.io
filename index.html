@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Translation</title>
+    <title>GPT Personalizado</title>
     <style>
         /* Reset y estilos base */
         * {
@@ -14,133 +14,78 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Container principal */
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .logo-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .title-container h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .title-container p {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        /* Contenido principal */
+        /* Contenido principal centrado */
         .main-content {
-            padding: 50px 30px;
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
             text-align: center;
+            animation: fadeIn 1s ease-out;
         }
 
-        .description {
-            font-size: 1.3rem;
-            color: #555;
-            margin-bottom: 40px;
-            max-width: 700px;
-            line-height: 1.8;
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 30px;
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
         }
 
-        .feature {
-            background: #f8f9fa;
-            padding: 30px 25px;
-            border-radius: 12px;
-            border-left: 5px solid #3498db;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature h3 {
-            color: #2c3e50;
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
             margin-bottom: 15px;
-            font-size: 1.4rem;
-            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .feature p {
-            color: #7f8c8d;
-            font-size: 1rem;
-            line-height: 1.6;
+        .subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
         }
 
         /* Footer */
         .footer {
-            background: #2c3e50;
+            background: rgba(0, 0, 0, 0.1);
             color: white;
             text-align: center;
-            padding: 25px;
-            font-size: 1rem;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* Animaciones */
         @keyframes fadeIn {
             from { 
                 opacity: 0; 
-                transform: translateY(30px); 
+                transform: translateY(20px); 
             }
             to { 
                 opacity: 1; 
@@ -152,168 +97,84 @@
 
         /* Tablets */
         @media (max-width: 768px) {
-            .title-container h1 {
-                font-size: 2.5rem;
+            .title {
+                font-size: 2.8rem;
             }
             
-            .title-container p {
+            .subtitle {
                 font-size: 1.2rem;
             }
             
-            .logo-image {
-                width: 85px;
-                height: 85px;
+            .logo {
+                width: 100px;
+                height: 100px;
             }
             
-            .main-content {
-                padding: 40px 25px;
-            }
-            
-            .description {
-                font-size: 1.2rem;
-            }
-            
-            .features {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
+            .logo-text {
+                font-size: 2rem;
             }
         }
 
         /* Móviles */
         @media (max-width: 480px) {
-            .header {
-                padding: 40px 20px;
+            .title {
+                font-size: 2.2rem;
             }
             
-            .title-container h1 {
-                font-size: 2rem;
-            }
-            
-            .title-container p {
+            .subtitle {
                 font-size: 1.1rem;
             }
             
-            .logo-image {
-                width: 75px;
-                height: 75px;
+            .logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
             }
             
             .main-content {
-                padding: 30px 20px;
+                padding: 30px 15px;
             }
             
-            .description {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .feature {
-                padding: 25px 20px;
-            }
-            
-            body {
+            .footer {
                 padding: 15px;
             }
         }
 
         /* Móviles pequeños */
         @media (max-width: 320px) {
-            .logo-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .title-container h1 {
+            .title {
                 font-size: 1.8rem;
             }
             
-            .title-container p {
+            .subtitle {
                 font-size: 1rem;
-            }
-            
-            .logo-image {
-                width: 65px;
-                height: 65px;
             }
         }
 
         /* Modo oscuro automático */
         @media (prefers-color-scheme: dark) {
             body {
-                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            }
-            
-            .container {
-                background: #34495e;
-                color: #ecf0f1;
-            }
-            
-            .feature {
-                background: #2c3e50;
-                color: #ecf0f1;
-            }
-            
-            .feature h3 {
-                color: #ecf0f1;
-            }
-            
-            .feature p {
-                color: #bdc3c7;
-            }
-            
-            .description {
-                color: #bdc3c7;
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo-container">
-                <img src="MYJLlkJeEElaMnQEr2gj7.webp" alt="Logo Instituto Translation" class="logo-image">
-                <div class="title-container">
-                    <h1>Instituto Translation</h1>
-                    <p>Excelencia en servicios de traducción</p>
-                </div>
-            </div>
-        </header>
-        
-        <main class="main-content">
-            <p class="description">
-                Ofrecemos servicios de traducción profesional de alta calidad en múltiples idiomas, 
-                adaptándonos a las necesidades específicas de cada cliente con los más altos estándares de calidad.
-            </p>
-            
-            <div class="features">
-                <div class="feature">
-                    <h3>Traducción Profesional</h3>
-                    <p>Textos técnicos, legales, médicos y literarios con máxima precisión y atención al detalle.</p>
-                </div>
-                <div class="feature">
-                    <h3>Localización Cultural</h3>
-                    <p>Adaptamos contenido considerando diferencias culturales, regionales y contextuales específicas.</p>
-                </div>
-                <div class="feature">
-                    <h3>Múltiples Idiomas</h3>
-                    <p>Amplia gama de combinaciones lingüísticas para todos tus proyectos y necesidades.</p>
-                </div>
-                <div class="feature">
-                    <h3>Entrega Rápida</h3>
-                    <p>Cumplimos con los plazos más exigentes sin comprometer la calidad del trabajo final.</p>
-                </div>
-            </div>
-        </main>
-        
-        <footer class="footer">
-            <p>&copy; 2024 Instituto Translation. Todos los derechos reservados.</p>
-        </footer>
+    <div class="main-content">
+        <div class="logo">
+            <div class="logo-text">AI</div>
+        </div>
+        <h1 class="title">GPT Personalizado</h1>
+        <p class="subtitle">Tu asistente inteligente</p>
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 GPT Personalizado. Todos los derechos reservados.</p>
+    </footer>
 
     <!-- Script de Chatbase -->
     <script>
